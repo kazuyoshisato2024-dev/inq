@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相談管理 - Inq Concierge</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="ガイド向け相談対応システム - 旅行者からの相談を効率的に管理・対応">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div>
+                    <h1>相談管理ダッシュボード</h1>
+                    <p>旅行者からの相談を確認して対応しましょう</p>
+                </div>
+
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="language-filter">言語</label>
+                        <select id="language-filter" class="filter-select">
+                            <option value="all">すべて</option>
+                            <option value="北京語">北京語</option>
+                            <option value="広東語">広東語</option>
+                            <option value="韓国語">韓国語</option>
+                            <option value="英語">英語</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="status-filter">ステータス</label>
+                        <select id="status-filter" class="filter-select">
+                            <option value="all">すべて</option>
+                            <option value="new">新規</option>
+                            <option value="in-progress">対応中</option>
+                            <option value="completed">完了</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div id="consultation-grid" class="consultation-grid">
+                <!-- Consultation cards will be rendered here by JavaScript -->
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
