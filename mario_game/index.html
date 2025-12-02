@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スーパープラットフォーマー - 横スクロールゲーム</title>
+    <meta name="description" content="スーパーマリオブラザーズ2風の楽しい横スクロールプラットフォームゲーム">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <div class="header-content">
+                <h1 class="game-title">🎮 スーパープラットフォーマー</h1>
+                <div class="game-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">スコア</span>
+                        <span class="stat-value" id="score">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">ライフ</span>
+                        <span class="stat-value" id="lives">❤️❤️❤️</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">コイン</span>
+                        <span class="stat-value" id="coins">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="canvas-wrapper">
+            <canvas id="gameCanvas"></canvas>
+
+            <div class="game-overlay" id="startScreen">
+                <div class="overlay-content">
+                    <h2 class="overlay-title">🌟 スーパープラットフォーマー 🌟</h2>
+                    <p class="overlay-description">横スクロールアドベンチャーへようこそ!</p>
+                    <div class="controls-info">
+                        <h3>操作方法</h3>
+                        <div class="control-item">
+                            <kbd>←</kbd> <kbd>→</kbd> 移動
+                        </div>
+                        <div class="control-item">
+                            <kbd>Space</kbd> ジャンプ
+                        </div>
+                    </div>
+                    <button class="game-button" id="startButton">ゲームスタート</button>
+                </div>
+            </div>
+
+            <div class="game-overlay hidden" id="gameOverScreen">
+                <div class="overlay-content">
+                    <h2 class="overlay-title game-over">ゲームオーバー</h2>
+                    <p class="final-score">最終スコア: <span id="finalScore">0</span></p>
+                    <p class="final-coins">コイン: <span id="finalCoins">0</span></p>
+                    <button class="game-button" id="restartButton">もう一度プレイ</button>
+                </div>
+            </div>
+
+            <div class="game-overlay hidden" id="winScreen">
+                <div class="overlay-content">
+                    <h2 class="overlay-title win">🎉 クリア! 🎉</h2>
+                    <p class="final-score">最終スコア: <span id="winScore">0</span></p>
+                    <p class="final-coins">コイン: <span id="winCoins">0</span></p>
+                    <button class="game-button" id="playAgainButton">もう一度プレイ</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-footer">
+            <div class="tips">
+                <p>💡 ヒント: 敵の頭を踏んで倒そう! コインを集めてスコアアップ!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+
+</html>
