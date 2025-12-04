@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="外部サイトのコンテンツを表示するビューアー">
+    <title>Content Viewer - コンテンツビューアー</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">
+                <span class="icon">📰</span>
+                Content Viewer
+            </h1>
+            <p class="subtitle">外部サイトのコンテンツを表示</p>
+        </header>
+
+        <main class="main-content">
+            <div class="control-panel">
+                <div class="input-group">
+                    <label for="url-input" class="input-label">記事URL</label>
+                    <div class="input-wrapper">
+                        <input type="url" id="url-input" class="url-input"
+                            placeholder="https://www.re-port.net/article/news/0000080517/"
+                            value="https://www.re-port.net/article/news/0000080517/">
+                        <button id="load-btn" class="load-btn">
+                            <span class="btn-text">読み込み</span>
+                            <span class="btn-icon">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="selector-input" class="input-label">CSSセレクタ（抽出モード用）</label>
+                    <div class="input-wrapper-single">
+                        <input type="text" id="selector-input" class="url-input"
+                            placeholder=".article--main--cell.content" value=".article--main--cell.content">
+                    </div>
+                    <p class="input-hint">例: .article, #content, .post-body, article</p>
+                </div>
+
+                <div class="mode-selector">
+                    <label class="mode-label">表示モード</label>
+                    <div class="mode-buttons">
+                        <button class="mode-btn active" data-mode="extract">
+                            <span class="mode-icon">✂️</span>
+                            <span class="mode-text">抽出モード</span>
+                        </button>
+                        <button class="mode-btn" data-mode="iframe">
+                            <span class="mode-icon">🖼️</span>
+                            <span class="mode-text">埋め込みモード</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-area">
+                <div id="loading" class="loading hidden">
+                    <div class="spinner"></div>
+                    <p class="loading-text">読み込み中...</p>
+                </div>
+
+                <div id="error" class="error hidden">
+                    <div class="error-icon">⚠️</div>
+                    <p class="error-message"></p>
+                </div>
+
+                <div id="content-display" class="content-display">
+                    <div class="welcome-message">
+                        <div class="welcome-icon">👋</div>
+                        <h2>ようこそ!</h2>
+                        <p>上のフォームにURLを入力して、コンテンツを表示してください。</p>
+                        <div class="features">
+                            <div class="feature">
+                                <span class="feature-icon">✂️</span>
+                                <span class="feature-text">抽出モード: 指定したCSSセレクタのコンテンツを表示</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">🖼️</span>
+                                <span class="feature-text">埋め込みモード: ページ全体を表示</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">🎯</span>
+                                <span class="feature-text">カスタムセレクタ: 好きなクラスや要素を指定可能</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>© 2025 Content Viewer | 許可を得たコンテンツのみ表示してください</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
